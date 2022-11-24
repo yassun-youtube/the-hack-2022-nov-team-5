@@ -1,0 +1,22 @@
+{
+  "name": "the-hack-2022-nov-team-5",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^13.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "eslint": "7.32.0",
+    "eslint-config-next": "13.0.5",
+    "typescript": "4.9.3"
+  }
+}
