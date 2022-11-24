@@ -2,9 +2,11 @@
 
 | ライブラリ | バージョン |
 | ---------- | ---------- |
+| node       | 19.1.0     |
 | next       | 13.0.5     |
 | react      | 18.2.0     |
 | typescript | 4.9.3      |
+| jest       | 19.3.1     |
 | antd       | 5.0.1      |
 
 ## 環境構築
@@ -28,6 +30,9 @@ npm run lint
 
 # コード整形
 npm run format
+
+# テスト
+npm run test
 ```
 
 [http://localhost:3000](http://localhost:3000)
