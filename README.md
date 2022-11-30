@@ -8,6 +8,8 @@
 | typescript | 4.9.3      |
 | jest       | 19.3.1     |
 | antd       | 5.0.1      |
+| firebase   | 9.14.0     |
+
 
 ## 環境構築
 
