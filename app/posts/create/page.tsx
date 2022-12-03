@@ -1,8 +1,11 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown'
 
-const createPage = () => {
+const CreatePage = () => {
+  const [article, setArticle] = useState('Markdownのプレビューがここに表示されます。');
   return (
-    <div className="block w-full text-center">
+    <div className="block w-full">
       <input
         type="text"
         className="w-full m-1 border-solid border border-gray-200"
@@ -24,15 +27,22 @@ const createPage = () => {
           placeholder="Markdown記法を使用することができます。"
           rows={20}
           className="w-1/2 mr-1 border-solid border border-gray-200"
+          onChange={(e) => setArticle(e.target.value)}
         ></textarea>
-        <div className="markdownPreview ml-1 w-1/2 border-solid border border-gray-200 overflow-scroll">
-          Markdown記法を使用することができます。
+        <div
+          id="markDownPreview"
+          className="ml-1 w-1/2 border-solid border border-gray-200 overflow-scroll"
+        >
+          <ReactMarkdown>
+            {article}
+          </ReactMarkdown>
         </div>
       </div>
-
-      <button className="mx-auto my-4 px-8 py-4 text-white bg-sky-500 rounded">投稿</button>
+      <div className="buttonArea text-center">
+        <button className="mx-auto my-4 px-8 py-4 text-white bg-sky-500 rounded">投稿</button>
+      </div>
     </div>
   );
 };
 
-export default createPage;
+export default CreatePage;
