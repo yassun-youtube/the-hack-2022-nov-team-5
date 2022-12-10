@@ -5,7 +5,6 @@ import Post from '../../../types/Post';
 import { createPost } from '../../../lib/request';
 
 const CreatePage = () => {
-
   const [post, setPost] = useState<Post>({
     title: '',
     tag: '',
@@ -21,7 +20,7 @@ const CreatePage = () => {
   };
   return (
     <div className="block w-full">
-      <form action='/' onSubmit={() => submitPost()}>
+      <form action="/" onSubmit={() => submitPost()}>
         <input
           type="text"
           className="w-full m-1 border-solid border border-gray-200"
@@ -59,10 +58,7 @@ const CreatePage = () => {
           </div>
         </div>
         <div className="buttonArea text-center">
-          <button
-            type='submit'
-            className="mx-auto my-4 px-8 py-4 text-white bg-sky-500 rounded"
-          >
+          <button type="submit" className="mx-auto my-4 px-8 py-4 text-white bg-sky-500 rounded">
             投稿
           </button>
         </div>
