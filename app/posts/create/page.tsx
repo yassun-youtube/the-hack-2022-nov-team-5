@@ -23,21 +23,21 @@ const CreatePage = () => {
       <form action="/" onSubmit={() => submitPost()}>
         <input
           type="text"
-          className="w-full m-1 border-solid border border-gray-200"
+          className="w-full m-1 p-2 border-solid border border-gray-200"
           placeholder="タイトル"
           required
           onChange={(e) => setPost({ ...post, title: e.target.value })}
         />
         <input
           type="text"
-          className="w-full m-1 border-solid border border-gray-200"
+          className="w-full m-1 p-2 border-solid border border-gray-200"
           placeholder="名前"
           required
           onChange={(e) => setPost({ ...post, name: e.target.value })}
         />
         <input
           type="text"
-          className="w-full m-1 border-solid border border-gray-200"
+          className="w-full m-1 p-2 border-solid border border-gray-200"
           placeholder="タグ（複数入力の際はスペース区切りで入力して下さい）"
           required
           onChange={(e) => setPost({ ...post, tag: e.target.value })}
@@ -46,7 +46,7 @@ const CreatePage = () => {
           <textarea
             placeholder="Markdown記法を使用することができます。"
             rows={20}
-            className="w-1/2 mr-1 border-solid border border-gray-200"
+            className="w-1/2 mr-1 p-2 border-solid border border-gray-200"
             required
             onChange={(e) => setPost({ ...post, article: e.target.value })}
           ></textarea>
