@@ -52,7 +52,7 @@ const CreatePage = () => {
           ></textarea>
           <div
             id="markDownPreview"
-            className="ml-1 w-1/2 border-solid border border-gray-200 overflow-scroll"
+            className="ml-1 p-2 w-1/2 border-solid border border-gray-200 overflow-scroll"
           >
             <ReactMarkdown>{post.article}</ReactMarkdown>
           </div>
