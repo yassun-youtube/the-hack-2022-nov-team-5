@@ -6,15 +6,15 @@ const createPost = async (post: Post) => {
   await addDoc(collection(db, 'posts'), post);
 };
 
-const getPost = async (id: string) => { 
-  const postDocumentRef = doc(db, 'posts', id)
-  const postResponse = await getDoc(postDocumentRef)
+const getPost = async (id: string) => {
+  const postDocumentRef = doc(db, 'posts', id);
+  const postResponse = await getDoc(postDocumentRef);
   return postResponse.data();
-}
+};
 
 const updatePost = async (id: string, post: Post) => {
-  const postDocumentRef = doc(db, 'posts', id)
-  await updateDoc(postDocumentRef, post)
-}
+  const postDocumentRef = doc(db, 'posts', id);
+  await updateDoc(postDocumentRef, post);
+};
 
 export { createPost, getPost, updatePost };

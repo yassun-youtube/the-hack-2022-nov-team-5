@@ -1,12 +1,10 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 
 import ReactMarkdown from 'react-markdown';
 import Post from '../../../../types/Post';
 import { getPost, updatePost } from '../../../../lib/request';
-const EditPage = ({params}: {
-  params: { id: string }
-}) => {
+const EditPage = ({ params }: { params: { id: string } }) => {
   const [post, setPost] = useState<Post>({
     title: '',
     tag: '',
@@ -28,11 +26,11 @@ const EditPage = ({params}: {
           created_at: postData.created_at,
           like_count: postData.like_count,
           try_count: postData.try_count,
-        })
+        });
       }
     };
-    fetchPostData()
-  }, [])
+    fetchPostData();
+  }, []);
   const submitPost = () => {
     setPost({ ...post, created_at: new Date() });
     updatePost(params.id, post);
