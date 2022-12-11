@@ -1,5 +1,4 @@
 type Post = {
-  id?: string;
   title: string;
   tag: string;
   name: string;
