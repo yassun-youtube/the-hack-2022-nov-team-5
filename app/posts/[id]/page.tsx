@@ -2,6 +2,7 @@ import React from 'react';
 import { getPost } from '../../../lib/request';
 import { Article } from './components';
 import { CommentForm } from './CommentForm';
+import { Comments } from './Comments';
 import { Reactions } from './Reactions';
 
 type Props = {
@@ -24,6 +25,9 @@ const DetailPage = async ({ params: { id } }: Props) => {
             </div>
             <div className="mt-12">
               <CommentForm id={id} />
+              <div className="mt-4">
+                <Comments id={id} />
+              </div>
             </div>
           </article>
         </>
