@@ -17,4 +17,20 @@ const updatePost = async (id: string, post: Post) => {
   await updateDoc(postDocumentRef, post);
 };
 
-export { createPost, getPost, updatePost };
+const addReactionCount = async (id: string, reactionType: 'like' | 'try', currentCount: number) => {
+  const docRef = doc(db, 'posts', id);
+  const reactionKey = `${reactionType}_count`;
+  await updateDoc(docRef, { [reactionKey]: currentCount + 1 });
+};
+
+const subtractReactionCount = async (
+  id: string,
+  reactionType: 'like' | 'try',
+  currentCount: number,
+) => {
+  const docRef = doc(db, 'posts', id);
+  const reactionKey = `${reactionType}_count`;
+  await updateDoc(docRef, { [reactionKey]: currentCount - 1 });
+};
+
+export { createPost, getPost, updatePost, addReactionCount, subtractReactionCount };
