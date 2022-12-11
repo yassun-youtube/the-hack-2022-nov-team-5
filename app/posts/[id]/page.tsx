@@ -18,7 +18,7 @@ const DetailPage = async ({ params: { id } }: Props) => {
     <div className="h-full bg-gray-200">
       {post ? (
         <>
-          <article className="container mx-auto p-8">
+          <article className="container mx-auto p-8 w-3/5">
             <Article post={post} id={id} />
             <div className="mt-4">
               <Reactions id={id} likeCount={post.like_count} tryCount={post.try_count} />

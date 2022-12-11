@@ -19,7 +19,12 @@ const createPost = async (post: Post) => {
 const getPost = async (id: string) => {
   const postDocumentRef = doc(db, 'posts', id);
   const postResponse = await getDoc(postDocumentRef);
-  return postResponse.exists() ? (postResponse.data() as Post) : undefined;
+  if (postResponse.exists()) {
+    const post = postResponse.data();
+    return { ...post, created_at: post.created_at.toDate() } as Post;
+  } else {
+    return undefined;
+  }
 };
 
 const updatePost = async (id: string, post: Post) => {
