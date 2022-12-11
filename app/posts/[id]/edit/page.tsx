@@ -80,7 +80,7 @@ const EditPage = ({ params }: { params: { id: string } }) => {
         </div>
         <div className="buttonArea text-center">
           <button type="submit" className="mx-auto my-4 px-8 py-4 text-white bg-sky-500 rounded">
-            投稿
+            更新
           </button>
         </div>
       </form>
