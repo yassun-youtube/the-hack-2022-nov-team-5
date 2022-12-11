@@ -21,9 +21,10 @@ export const Comments: React.FC<{ id: string }> = ({ id }) => {
   return (
     <>
       {comments ? (
-        <div className="bg-white shadow-xl break-words p-8 rounded-lg">
-          <p>コメント</p>
+        <div className="bg-white shadow-lg break-words p-8 rounded-lg">
+          <p className="text-xl font-bold">コメント</p>
           <hr />
+          {/* FIXME: コメント投稿時に同期 */}
           {comments.map((comment) => (
             <div key={comment.body} className="mt-4">
               <CommentItem comment={comment} />

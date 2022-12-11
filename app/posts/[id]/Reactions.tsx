@@ -66,7 +66,7 @@ export const Reactions: React.FC<{ id: string; likeCount: number; tryCount: numb
   return (
     <div className="flex flex-row reactions">
       <button
-        className={`flex flex-row h-12 w-36 rounded-lg mr-4 ${likeStyle.bgColor}`}
+        className={`flex flex-row h-12 w-36 shadow-lg rounded-lg mr-4 ${likeStyle.bgColor}`}
         style={{ alignItems: 'center' }}
         onClick={onClickLike}
       >
@@ -74,7 +74,7 @@ export const Reactions: React.FC<{ id: string; likeCount: number; tryCount: numb
         <p className={likeStyle.textColor}>{likeCountState} いいね！</p>
       </button>
       <button
-        className={`flex flex-row h-12 w-36 rounded-lg ${tryStyle.bgColor}`}
+        className={`flex flex-row h-12 w-36 shadow-lg rounded-lg ${tryStyle.bgColor}`}
         style={{ alignItems: 'center' }}
         onClick={onClickTry}
       >

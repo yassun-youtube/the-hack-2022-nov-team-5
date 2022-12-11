@@ -19,7 +19,7 @@ export const CommentForm: React.FC<{ id: string }> = ({ id }) => {
   };
 
   return (
-    <div className="bg-white shadow-xl break-words p-8 rounded-lg">
+    <div className="bg-white shadow-lg break-words p-8 rounded-lg">
       <input
         type="text"
         className="w-full border-solid border border-gray-200 mb-4 p-2"

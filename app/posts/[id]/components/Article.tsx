@@ -10,7 +10,7 @@ export const Article: React.FC<{ post: Post; id: string }> = ({ post, id }) => {
   const createdAt = moment(created_at).format('YYYY/MM/DD HH:mm');
 
   return (
-    <div className="article-card bg-white shadow-xl break-words p-8 rounded-lg">
+    <div className="article-card bg-white shadow-lg break-words p-8 rounded-lg">
       <div className="article-header">
         <div className="mb-2 flex justify-between">
           <div>
