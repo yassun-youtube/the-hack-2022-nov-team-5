@@ -17,7 +17,7 @@ const Home = () => {
     <div className="homePage">
       {postList.map((post) => {
         return (
-          <div className="postContents" key={post.id}>
+          <div className="postContents font-bold underline" key={post.id}>
             {post.context}
           </div>
         );
