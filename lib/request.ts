@@ -8,6 +8,7 @@ import {
   query,
   where,
   getDocs,
+  orderBy,
 } from 'firebase/firestore';
 import Post from '../types/Post';
 import Comment from '../types/Comment';
@@ -53,7 +54,7 @@ const createComment = async (comment: Comment) => {
 };
 
 const getComments = async (id: string) => {
-  const q = query(collection(db, 'comments'), where('post_id', '==', id));
+  const q = query(collection(db, 'comments'), where('post_id', '==', id), orderBy('created_at'));
   const data = await getDocs(q);
   const fetchedComments = data.docs.map((fetchedDoc) => fetchedDoc.data());
   const formattedComment = fetchedComments.map(
