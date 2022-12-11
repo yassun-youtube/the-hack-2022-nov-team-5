@@ -33,4 +33,8 @@ const subtractReactionCount = async (
   await updateDoc(docRef, { [reactionKey]: currentCount - 1 });
 };
 
-export { createPost, getPost, updatePost, addReactionCount, subtractReactionCount };
+const createComment = async (comment: Comment) => {
+  await addDoc(collection(db, 'comments'), comment);
+};
+
+export { createPost, getPost, updatePost, addReactionCount, subtractReactionCount, createComment };

@@ -64,7 +64,7 @@ export const Reactions: React.FC<{ id: string; likeCount: number; tryCount: numb
   };
 
   return (
-    <div className="flex flex-row reactions mt-4">
+    <div className="flex flex-row reactions">
       <button
         className={`flex flex-row h-12 w-36 rounded-lg mr-4 ${likeStyle.bgColor}`}
         style={{ alignItems: 'center' }}
