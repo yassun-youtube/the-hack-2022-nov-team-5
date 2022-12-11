@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Post from '../../../../types/Post';
@@ -16,8 +17,13 @@ export const Article: React.FC<{ post: Post; id: string }> = ({ post, id }) => {
             <div className="inline-block mr-4">著者：{name}</div>
             <div className="inline-block">投稿日時：{createdAt}</div>
           </div>
-          {/* TODO: 編集画面ができたらリンクを貼る <Link href={`/post/${id}/edit`}>編集する</Link> */}
-          <div>編集する</div>
+          <div>
+            <Link href={`/posts/${id}/edit`} className={'mr-4'}>
+              <button className="mx-auto p-1 text-white bg-sky-500 rounded">編集する</button>
+            </Link>
+            {/* 削除APIをマージしたら削除ボタンを実装 */}
+            <button className="mx-auto p-1 text-white bg-red-500 rounded">削除する</button>
+          </div>
         </div>
         <h1>{title}</h1>
         <div>tags: {tags}</div>
