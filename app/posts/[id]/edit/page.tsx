@@ -6,6 +6,7 @@ import Post from '../../../../types/Post';
 import { getPost, updatePost } from '../../../../lib/request';
 const EditPage = ({ params }: { params: { id: string } }) => {
   const [post, setPost] = useState<Post>({
+    id: '',
     title: '',
     tag: '',
     name: '',
@@ -19,6 +20,7 @@ const EditPage = ({ params }: { params: { id: string } }) => {
       const postData = await getPost(params.id);
       if (postData) {
         setPost({
+          id: params.id,
           title: postData.title,
           tag: postData.tag,
           name: postData.name,
