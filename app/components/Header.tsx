@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import CreatePostButton from './create-post-button';
+import CreatePostButton from './CreatePostButton';
 
 const Header = () => {
   return (

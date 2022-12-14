@@ -1,5 +1,5 @@
-import Header from './components/header';
-import PostsList from './components/posts-list';
+import Header from './components/Header';
+import PostsList from './components/PostsList';
 
 const Home = () => {
   return (
