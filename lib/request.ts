@@ -72,7 +72,8 @@ const getPostAll = async () => {
   const data = collection(db, 'posts');
   const q = query(data, orderBy('created_at', 'desc'));
   const queryData = await getDocs(q);
-  return queryData.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  const posts = queryData.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  return posts as Post[];
 };
 
 const deletePost = async (postId: string) => {

@@ -1,55 +1,43 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, {ChangeEvent, useEffect, useRef, useState} from 'react';
 import { getPostAll, deletePost } from '../../lib/request';
 import Link from 'next/link';
 import Post from '../../types/Post';
 import { FaHeart, FaHandPointUp } from 'react-icons/fa';
 
 const PostsList = () => {
-  const [postList, setPostList] = useState<[]>([]);
-  const [searchQuery, setSearchQuery] = useState<[]>([]);
-  const ref = useRef<HTMLInputElement>(null);
+  const [postList, setPostList] = useState<Post[]>([]);
+  const [filteredPostList, setFilteredPostList] = useState<Post[]>([]);
 
   useEffect(() => {
     const getPosts = async () => {
-      // @ts-ignore
-      setPostList(await getPostAll());
+      const posts = await getPostAll();
+      setPostList(posts);
+      setFilteredPostList(posts);
     };
-    getPosts().then();
+    getPosts();
   }, []);
 
-  const handleSearch = () => {
-    setSearchQuery(
-      // @ts-ignore
-      postList.filter((posts: Post) => posts.title.toLowerCase().includes(ref.current?.value.toLowerCase())),
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    const searchWord = e.target.value.toLowerCase();
+    setFilteredPostList(
+        postList.filter((post) => post.title.toLowerCase().includes(searchWord)),
     );
   };
-
-  const displayPosts = () => {
-    if (ref.current?.value.length === 0) {
-      return postList;
-    } else if (searchQuery.length === 0) {
-      return [];
-    } else {
-      return searchQuery;
-    }
-  };
-  const displayPostsList = displayPosts();
 
   return (
     <div className="w-full pt-9 pl-20 pr-20 space-y-5">
       <div className="w-700 pb-5 mx-auto">
-        <p>検索</p>
+        <p>タイトル検索</p>
         <input
-          type="text"
-          ref={ref}
-          onChange={() => handleSearch()}
-          className="rounded py-2 px-4 text-left border border-gray-400"
+            type="text"
+            onChange={handleSearch}
+            className="rounded py-2 px-4 text-left border border-gray-400"
         />
       </div>
       {/*{TODO:検索結果が0件だったときにコンテンツないよって表示する}*/}
-      {displayPostsList.map((posts: Post) => {
+      {filteredPostList.map((posts: Post) => {
         if (posts.title.length) {
           return (
             <div className="bg-blue-100 rounded-lg space-x-4 space-y-2 justify-center " key={posts.id}>
