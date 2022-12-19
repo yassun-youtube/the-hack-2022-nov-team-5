@@ -2,7 +2,7 @@
 
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { getPostAll } from '../../lib/request';
-import Post from '../../types/Post';
+import { Post } from '../../types/Post';
 import PostCard from './PostCard';
 
 const PostsList = () => {
