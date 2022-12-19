@@ -38,6 +38,7 @@ const PostsList = () => {
         if (post.title.length) {
           return (
             <PostCard
+              key={post.id}
               id={post.id}
               title={post.title}
               article={post.article}
