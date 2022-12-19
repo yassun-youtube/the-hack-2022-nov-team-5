@@ -6,6 +6,7 @@ import { createPost } from '../../../lib/request';
 
 const CreatePage = () => {
   const [post, setPost] = useState<Post>({
+    id: '',
     title: '',
     tag: '',
     name: '',
