@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Post } from '../../../../types/Post';
+import CodeBlock from '../../../components/CodeBlock';
+import { DeleteButton } from '../DeleteButton';
 
 export const Article: React.FC<{ post: Post; id: string }> = ({ post, id }) => {
   const { name, created_at, title, tag, article } = post;
@@ -29,7 +31,7 @@ export const Article: React.FC<{ post: Post; id: string }> = ({ post, id }) => {
       </div>
       <hr />
       <section className="article-body my-4">
-        <ReactMarkdown>{article}</ReactMarkdown>
+        <ReactMarkdown components={{ code: CodeBlock }}>{article}</ReactMarkdown>
       </section>
     </div>
   );

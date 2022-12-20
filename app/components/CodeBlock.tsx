@@ -9,11 +9,9 @@ const CodeBlock: CodeComponent = ({ inline, className, children }) => {
   const match = /language-(\w+)/.exec(className || '');
   const lang = match && match[1] ? match[1] : '';
   return (
-    <SyntaxHighlighter
-      style={dark}
-      language={lang}>
+    <SyntaxHighlighter style={dark} language={lang}>
       {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
+    </SyntaxHighlighter>
   );
 };
 

@@ -1,9 +1,10 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-
 import ReactMarkdown from 'react-markdown';
 import { Post } from '../../../../types/Post';
 import { getPost, updatePost } from '../../../../lib/request';
+import CodeBlock from '../../../components/CodeBlock';
+
 const EditPage = ({ params }: { params: { id: string } }) => {
   const [post, setPost] = useState<Post>({
     id: '',
@@ -77,7 +78,7 @@ const EditPage = ({ params }: { params: { id: string } }) => {
           id="markDownPreview"
           className="ml-1 w-1/2 border-solid border border-gray-200 overflow-scroll"
         >
-          <ReactMarkdown>{post.article}</ReactMarkdown>
+          <ReactMarkdown components={{ code: CodeBlock }}>{post.article}</ReactMarkdown>
         </div>
       </div>
       <div className="buttonArea text-center">
