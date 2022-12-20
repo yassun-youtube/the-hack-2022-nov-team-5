@@ -2,8 +2,7 @@ import moment from 'moment';
 import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Post from '../../../../types/Post';
-import { DeleteButton } from '../DeleteButton';
+import { Post } from '../../../../types/Post';
 
 export const Article: React.FC<{ post: Post; id: string }> = ({ post, id }) => {
   const { name, created_at, title, tag, article } = post;

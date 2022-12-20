@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaHandPointUp, FaHeart } from 'react-icons/fa';
 import { deletePost } from '../../lib/request';
-import Post from '../../types/Post';
+import { Post } from '../../types/Post';
 
 const PostCard = (post: Post) => {
   const [postStatus, setPostStatus] = useState<boolean>(true);
