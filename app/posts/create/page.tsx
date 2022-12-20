@@ -1,9 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { PostCreate } from '../../../types/Post';
 import { createPost } from '../../../lib/request';
-import CodeBlock from '../../components/CodeBlock';
+import { Markdown } from '../../components/Markdown';
 
 const CreatePage = () => {
   const [post, setPost] = useState<PostCreate>({
@@ -56,7 +55,7 @@ const CreatePage = () => {
             id="markDownPreview"
             className="ml-1 p-2 w-1/2 border-solid border border-gray-200 overflow-scroll"
           >
-            <ReactMarkdown components={{ code: CodeBlock }}>{post.article}</ReactMarkdown>
+            <Markdown text={post.article} />
           </div>
         </div>
       </div>
