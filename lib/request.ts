@@ -11,10 +11,10 @@ import {
   orderBy,
   deleteDoc,
 } from 'firebase/firestore';
-import Post from '../types/Post';
+import { Post, PostCreate } from '../types/Post';
 import Comment from '../types/Comment';
 
-const createPost = async (post: Post) => {
+const createPost = async (post: PostCreate) => {
   await addDoc(collection(db, 'posts'), post);
 };
 

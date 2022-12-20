@@ -9,4 +9,6 @@ type Post = {
   try_count: number;
 };
 
-export default Post;
+type PostCreate = Omit<Post, 'id'>;
+
+export type { Post, PostCreate };
