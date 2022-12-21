@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { PostCreate } from '../../../types/Post';
 import { createPost } from '../../../lib/request';
+import { Markdown } from '../../components/Markdown';
 
 const CreatePage = () => {
   const [post, setPost] = useState<PostCreate>({
@@ -43,18 +43,20 @@ const CreatePage = () => {
         onChange={(e) => setPost({ ...post, tag: e.target.value })}
       />
       <div className="markdownArea flex m-1 justify-center w-full">
-        <textarea
-          placeholder="Markdown記法を使用することができます。"
-          rows={20}
-          className="w-1/2 mr-1 p-2 border-solid border border-gray-200"
-          required
-          onChange={(e) => setPost({ ...post, article: e.target.value })}
-        ></textarea>
-        <div
-          id="markDownPreview"
-          className="ml-1 p-2 w-1/2 border-solid border border-gray-200 overflow-scroll"
-        >
-          <ReactMarkdown>{post.article}</ReactMarkdown>
+        <div className="markdownArea flex m-1 justify-center w-full">
+          <textarea
+            placeholder="Markdown記法を使用することができます。"
+            rows={20}
+            className="w-1/2 mr-1 p-2 border-solid border border-gray-200"
+            required
+            onChange={(e) => setPost({ ...post, article: e.target.value })}
+          ></textarea>
+          <div
+            id="markDownPreview"
+            className="ml-1 p-2 w-1/2 border-solid border border-gray-200 overflow-scroll"
+          >
+            <Markdown text={post.article} />
+          </div>
         </div>
       </div>
       <div className="buttonArea text-center">
